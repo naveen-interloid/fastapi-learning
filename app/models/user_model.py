@@ -12,7 +12,7 @@ class User(Base):
         primary_key=True
     )
     
-    username : Mapped[str] = mapped_column(
+    fullname : Mapped[str] = mapped_column(
         String(255),
         nullable=False
     )
@@ -27,6 +27,11 @@ class User(Base):
         String(255),
         nullable=False
     )
+    
+    phone: Mapped[str] = mapped_column(
+    String(20),
+    nullable=True
+)
     
     books: Mapped[list['Book']] = relationship(
         'Book',
